@@ -75,7 +75,9 @@ public enum SGIcon : String {
   
   // MARK: Public Properties
   
+  @available(macOS 13.0, *)
   public var image : NSImage? {
+    return NSImage(symbolName: self.rawValue, bundle: Bundle.module, variableValue: 1.0)
     guard let image = NSImage(named: self.rawValue) else {
       return nil
     }

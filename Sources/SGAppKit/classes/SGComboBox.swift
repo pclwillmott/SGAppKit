@@ -33,7 +33,7 @@
 import Foundation
 import AppKit
 
-class SGComboBox : NSComboBox, NSComboBoxDelegate {
+public class SGComboBox : NSComboBox, NSComboBoxDelegate {
   
   override init(frame frameRect: NSRect) {
     super.init(frame: frameRect)
@@ -45,7 +45,7 @@ class SGComboBox : NSComboBox, NSComboBoxDelegate {
     self.delegate = self
   }
   
-  @objc func comboBoxSelectionDidChange(_ notification: Notification) {
+  @objc public func comboBoxSelectionDidChange(_ notification: Notification) {
     _ = target?.perform(action, with: self)
   }
   

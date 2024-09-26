@@ -78,10 +78,6 @@ public enum SGIcon : String {
   @available(macOS 13.0, *)
   public var image : NSImage? {
     return NSImage(symbolName: self.rawValue, bundle: Bundle.module, variableValue: 1.0)
-    guard let image = NSImage(named: self.rawValue) else {
-      return nil
-    }
-    return image
   }
   
   // MARK: Public Methods
@@ -89,10 +85,6 @@ public enum SGIcon : String {
   @available(macOS 13.0, *)
   @MainActor public func button(target: Any?, action: Selector?) -> NSButton? {
     guard let image = NSImage(symbolName: self.rawValue, bundle: Bundle.module, variableValue: 1.0) else {
-      return nil
-    }
-    return NSButton(image: image, target: target, action: action)
-    guard let image = NSImage(named: self.rawValue) else {
       return nil
     }
     return NSButton(image: image, target: target, action: action)

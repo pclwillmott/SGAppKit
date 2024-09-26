@@ -86,6 +86,7 @@ public enum SGIcon : String {
   
   // MARK: Public Methods
   
+  @available(macOS 13.0, *)
   @MainActor public func button(target: Any?, action: Selector?) -> NSButton? {
     guard let image = NSImage(symbolName: self.rawValue, bundle: Bundle.module, variableValue: 1.0) else {
       return nil

@@ -75,22 +75,17 @@ public enum SGIcon : String {
   
   // MARK: Public Properties
   
-//  @available(macOS 13.0, *)
   public var image : NSImage? {
-    if let url = Bundle.module.url(forResource: self.rawValue, withExtension: "symbolset") {
-      return NSImage(byReferencing: url)
-    }
-    return nil
+    return NSImage(symbolName: self.rawValue, bundle: Bundle.module, variableValue: 1.0)
   }
   
   // MARK: Public Methods
   
   @MainActor public func button(target: Any?, action: Selector?) -> NSButton? {
-    let image = NSImage(named: self.rawValue)
-    return NSButton(image: image!, target: target, action: action)
-    if let url = Bundle.module.url(forResource: self.rawValue, withExtension: "symbolset") {
+    guard let image = NSImage(symbolName: self.rawValue, bundle: Bundle.module, variableValue: 1.0) else {
+      return nil
     }
-    return nil
+    return NSButton(image: image, target: target, action: action)
   }
   
 }

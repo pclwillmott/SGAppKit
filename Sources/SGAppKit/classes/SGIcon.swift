@@ -86,8 +86,9 @@ public enum SGIcon : String {
   // MARK: Public Methods
   
   @MainActor public func button(target: Any?, action: Selector?) -> NSButton? {
+    let image = NSImage(named: self.rawValue)
+    return NSButton(image: image!, target: target, action: action)
     if let url = Bundle.module.url(forResource: self.rawValue, withExtension: "symbolset") {
-      return NSButton(image: NSImage(byReferencing: url), target: target, action: action)
     }
     return nil
   }

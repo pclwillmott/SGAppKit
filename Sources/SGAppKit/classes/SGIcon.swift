@@ -33,7 +33,7 @@
 import Foundation
 import AppKit
 
-public enum SGIcon : String {
+public enum SGIcon : String, CaseIterable {
   
   // MARK: Enumeration
   
@@ -69,7 +69,7 @@ public enum SGIcon : String {
   case engine                 = "Engine"
   case envelope               = "Envelope"
   case button                 = "Button"
-  case id                     = "ID"
+  case id                     = "id"
   case sunglasses             = "Sunglasses"
   case warning                = "Warning"
   

@@ -1,6 +1,13 @@
 import Testing
 @testable import SGAppKit
 
-@Test func example() async throws {
-    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+@Test func iconTests() async throws {
+  
+  for icon in SGIcon.allCases {
+    print(icon)
+    #expect(icon.image != nil)
+    
+  }
+  
 }
+
